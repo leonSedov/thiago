@@ -1,0 +1,475 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #cc1111; /* Cor vermelha PT */
+    height: 80px;
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.8); /* Adiciona um contorno escuro ao texto */
+  }
+  
+  .logo-nome {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 70px;
+    margin-right: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adiciona um contorno escuro ao texto */
+  }
+  
+  .nome-candidato {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8); /* Adiciona um contorno escuro ao texto */
+  }
+  
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adiciona um contorno escuro ao texto */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adiciona um contorno escuro ao texto */
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.8); /* Adiciona um contorno escuro ao texto */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #ffa500; /* Cor laranja ao passar o mouse */
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 4px;
+  }
+  
+  /* Estilos para dispositivos móveis */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background-color: #ff0000;
+      width: 100%;
+      text-align: center;
+      z-index: 1;
+    }
+  
+    .nav-links li {
+      margin: 15px 0;
+    }
+  
+    .logo-nome {
+      font-size: 16px; /* Ajusta o tamanho da fonte em dispositivos móveis */
+    }
+  }
+  
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#hero {
+    background-image: url('thiago-campanha.jpg');
+    background-size: cover;
+    background-position: left;
+    color: #fff;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+#hero .hero-content {
+    z-index: 2;
+    position: relative;
+}
+
+#hero .btn {
+    background-color: #FF6347;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#hero .btn:hover {
+    background-color: #FF4500;
+    transform: translateY(-5px);
+}
+
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #B22222;
+    margin-bottom: 1rem;
+}
+
+
+
+/* Propostas Cards */
+.propostas-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    color: #B22222;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+footer {
+    background-color: #B22222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .propostas-cards {
+        grid-template-columns: 1fr;
+    }
+}
+/* Estilos da seção 'Sobre' ajustados */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Diminui o espaçamento entre a imagem e o texto */
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-img img {
+    max-width: 30%; /* Diminui ainda mais o tamanho da imagem */
+    height: auto;
+    border-radius: 10px;
+}
+
+.sobre-text {
+    flex: 1;
+    text-align: left;
+}
+
+.sobre-text h2 {
+    color: #B22222;
+    margin-bottom: 1rem;
+}
+
+/* Ajuste de responsividade */
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-img img {
+        max-width: 70%; /* Ajuste para telas menores */
+    }
+}
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Espaço entre imagem e texto */
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-img img {
+    width: auto; /* Mantém a largura automática */
+    height: auto; /* Mantém a altura automática */
+    max-width: 300px; /* Limite máximo de largura para a imagem */
+    border-radius: 10px;
+    object-fit: cover; /* Garante que a imagem não seja distorcida */
+}
+
+.sobre-text {
+    flex: 1;
+    text-align: left;
+}
+
+.sobre-text h2 {
+    color: #B22222;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.sobre-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-img img {
+        max-width: 70%; /* Ajuste para telas menores */
+    }
+}
+#hero {
+    background-image: url('camapanha2.jpg.png');
+    background-size: cover;
+    background-position: center;
+    color: #000000;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+#hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#hero .hero-content {
+    z-index: 2;
+    position: relative;
+}
+
+#hero .btn {
+    background-color: #FF6347;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 200px; /* Ajuste de espaço entre o texto e o botão */
+    /* Para ajustar a localização do botão, você pode modificar a margem ou o padding abaixo: */
+    top: 150px; /* Aumente ou diminua para mover o botão verticalmente */
+    left: 200px; 
+}
+
+#hero .btn:hover {
+    background-color: #FF4500;
+    transform: translateY(-5px);
+}
+
+
+#hero .btn:hover {
+    background-color: #FF4500;
+    transform: translateY(-5px);
+}
+
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adiciona um overlay escuro sobre a imagem */
+    z-index: 0;
+}
+.hero-content {
+    z-index: 1;
+    max-width: 800px;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Um leve overlay para ajudar na legibilidade */
+    z-index: 0;
+}
+
+h1, p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adiciona um contorno escuro ao texto */
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #FF4500;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #FF6347;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+nav.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+footer {
+    background-color: #a12f2f; /* Cor de fundo do rodapé */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .social-media a {
+    margin: 0 10px;
+  }
+  
+  .social-media img {
+    width: 24px; /* Tamanho dos ícones */
+    height: auto;
+    vertical-align: middle;
+  }
+  footer {
+    background-color: #B22222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 0.5rem;
+    font-size: 2rem;
+}
